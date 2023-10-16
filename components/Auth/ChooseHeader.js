@@ -26,7 +26,7 @@ function ChooseHeader() {
         Create your account at Miss Cire to get exclusive benefits.
       </p>
 
-      <div className="flex justify-between">
+      <div className="flex justify-between gap-2">
         {OffersData.map((item, index) => (
           <div
             className="w-[165px] border border-[#dfdfdfdd] flex flex-col items-center justify-center py-2 px-4"

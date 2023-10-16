@@ -16,9 +16,11 @@ const ProgressBar = ({ setProgress, progress }) => {
   }, [progress1, progress]);
 
   return (
-    <div className="progress-bar mt-0">
+    <div className="progress-bar mt-5">
       <div
-        className="-mt-7 ml-[14px] absolute text-right"
+        className={`-mt-7 ${
+          progress !== 0 ? "ml-[14px]" : "-ml-[10px]"
+        } absolute text-right`}
         style={{ width: `${progress1}%` }}
       >
         <div className="inline-block relative">

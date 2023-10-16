@@ -44,26 +44,6 @@ function ChooseAccount({
 }) {
   return (
     <div className="max-w-[510px] w-full">
-      {/* <h1 className="text-[24px] font-bold text-center">
-        FREE SAMPLES DELIVERED TO YOUR DOOR
-      </h1>
-      <p className="text-[14px] text-[#7a7979] text-center mb-4">
-        Create your account at Miss Cire to get exclusive benefits.
-      </p>
-
-      <div className="flex justify-between">
-        {OffersData.map((item, index) => (
-          <div
-            className="w-[165px] border border-[#dfdfdfdd] flex flex-col items-center justify-center py-2 px-4"
-            key={index}
-          >
-            <Image src={item.image} width={20} height={20} alt="ico" />
-            <p className="text-[12px] text-black font-light text-center leading-4 mt-[8px]">
-              {item.title}
-            </p>
-          </div>
-        ))}
-      </div> */}
       <ChooseHeader />
 
       {/* choose account */}
@@ -117,8 +97,8 @@ function ChooseAccount({
 
         <div
           onClick={() => {
-            setGoingNext(true);
-            setProgress(25);
+            setGoingNext(1);
+            setProgress(0);
           }}
           className="flex items-center justify-center gap-2 w-full mx-auto !bg-primary !py-[10px] font-semibold cursor-pointer mb-4"
         >

@@ -98,7 +98,7 @@ const Auth = () => {
   };
 
   return (
-    <section className="flex-1 h-full flex items-center justify-center">
+    <section className="flex-1 h-full flex flex-col items-center justify-center">
       {loginOpen ? (
         <Login
           isOtp={isOtp}

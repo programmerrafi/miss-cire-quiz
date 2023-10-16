@@ -14,10 +14,11 @@ import ChooseHeader from "./ChooseHeader";
 import CompanyDetails from "./SignUpForm/CompanyDetails";
 import ProgressBar from "./ProgressBar";
 import Link from "next/link";
+import PicProducts from "./PicProducts";
 
 function SignUp() {
   const [progress, setProgress] = useState(0);
-  const [goingNext, setGoingNext] = useState(false);
+  const [goingNext, setGoingNext] = useState(0);
   const [selectAccountType, setSelectAccountType] = useState({
     title: "Esthetician/Cosmologist",
   });
@@ -93,7 +94,7 @@ function SignUp() {
         return;
       }
       nextStep();
-      setProgress(50);
+      setProgress(25);
     }
     const createData = {
       store_id: 1,
@@ -117,7 +118,7 @@ function SignUp() {
       companyDetails.state === "" ? setOpened(true) : setOpened(false);
       if (companyDetails.state === "") return;
       nextStep();
-      setProgress(75);
+      setProgress(50);
       // setLoading(true);
       // const res = await fetch(`${process.env.APP_API_URL}/influencers/create`, {
       //   method: "POST",
@@ -179,7 +180,7 @@ function SignUp() {
       }
 
       nextStep();
-      setProgress(100);
+      setProgress(75);
 
       // setLoading(true);
       // const profileData = {
@@ -298,17 +299,32 @@ function SignUp() {
 
   return (
     <>
-      {goingNext ? (
-        <div className="pt-8 pb-5 w-full relative">
-          <div className="max-w-[620px] w-full flex flex-col items-center px-3 mx-auto">
-            {/* stepper */}
-            {active !== 4 && (
-              <>
-                <ProgressBar setProgress={setProgress} progress={progress} />
-                <div className="py-2"></div>
-              </>
-            )}
+      {goingNext === 0 && (
+        <ChooseAccount
+          setProgress={setProgress}
+          setGoingNext={setGoingNext}
+          selectAccountType={selectAccountType}
+          setSelectAccountType={setSelectAccountType}
+        />
+      )}
 
+      {/* stepper */}
+      {active !== 4 && goingNext !== 0 && (
+        <div className="max-w-[580px] w-full px-3 mx-auto">
+          <ProgressBar setProgress={setProgress} progress={progress} />
+          <div className="py-1"></div>
+        </div>
+      )}
+
+      {goingNext === 1 && (
+        <>
+          <PicProducts setGoingNext={setGoingNext} />
+        </>
+      )}
+
+      {goingNext === 2 && (
+        <div className="pt-0 pb-5 w-full relative">
+          <div className="max-w-[620px] w-full flex flex-col items-center px-3 mx-auto">
             {active !== 4 && (
               <div className="sm:hidden block w-full -mt-4">
                 <div
@@ -419,13 +435,6 @@ function SignUp() {
             )}
           </div>
         </div>
-      ) : (
-        <ChooseAccount
-          setProgress={setProgress}
-          setGoingNext={setGoingNext}
-          selectAccountType={selectAccountType}
-          setSelectAccountType={setSelectAccountType}
-        />
       )}
     </>
   );
