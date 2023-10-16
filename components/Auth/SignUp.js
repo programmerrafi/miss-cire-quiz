@@ -94,7 +94,7 @@ function SignUp() {
         return;
       }
       nextStep();
-      setProgress(25);
+      setProgress(50);
     }
     const createData = {
       store_id: 1,
@@ -118,7 +118,7 @@ function SignUp() {
       companyDetails.state === "" ? setOpened(true) : setOpened(false);
       if (companyDetails.state === "") return;
       nextStep();
-      setProgress(50);
+      setProgress(75);
       // setLoading(true);
       // const res = await fetch(`${process.env.APP_API_URL}/influencers/create`, {
       //   method: "POST",
@@ -180,7 +180,7 @@ function SignUp() {
       }
 
       nextStep();
-      setProgress(75);
+      setProgress(100);
 
       // setLoading(true);
       // const profileData = {
@@ -318,7 +318,7 @@ function SignUp() {
 
       {goingNext === 1 && (
         <>
-          <PicProducts setGoingNext={setGoingNext} />
+          <PicProducts setGoingNext={setGoingNext} setProgress={setProgress} />
         </>
       )}
 

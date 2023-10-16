@@ -56,7 +56,7 @@ const samples = [
   },
 ];
 
-function PicProducts({ setGoingNext }) {
+function PicProducts({ setGoingNext, setProgress }) {
   const [allSamples, setAllSamples] = useState(samples);
   const [addNewItems, setAddNewItems] = useState([]);
 
@@ -111,6 +111,7 @@ function PicProducts({ setGoingNext }) {
         onClick={() => {
           if (addNewItems.length <= 1) return alert("Please select 2 samples");
           setGoingNext(2);
+          setProgress(25);
         }}
         title="SELECT & NEXT"
         type="submit"
