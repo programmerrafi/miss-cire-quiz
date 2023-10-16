@@ -10,7 +10,7 @@ function ContactForm({
   return (
     <div className={`flex-1 ${customerForm && "mb-8"}`}>
       {/* 1 */}
-      <div className={`input-group sm:mb-[20px] mb-[12px] `}>
+      <div className={`input-group sm:mb-[16px] mb-[12px] `}>
         <input
           type="text"
           value={contactInput.fname}
@@ -26,7 +26,7 @@ function ContactForm({
         <label htmlFor="fname">First Name</label>
       </div>
       {/* 2 */}
-      <div className={`input-group sm:mb-[20px] mb-[12px] relative`}>
+      <div className={`input-group sm:mb-[16px] mb-[12px] relative`}>
         <input
           type="text"
           name=""
@@ -43,7 +43,7 @@ function ContactForm({
         <label htmlFor="lname">Last Name</label>
       </div>
       {/* 3 */}
-      <div className={`input-group sm:mb-[20px] mb-[12px] `}>
+      <div className={`input-group sm:mb-[16px] mb-[12px] `}>
         <input
           type="email"
           value={contactInput.email}
@@ -60,7 +60,7 @@ function ContactForm({
       </div>
       {/* 4 */}
       <div className="flex gap-4">
-        <div className={`input-group sm:mb-[20px] mb-[12px] `}>
+        <div className={`input-group sm:mb-[16px] mb-[12px] `}>
           <input
             type="number"
             value={contactInput.phone}
@@ -77,7 +77,7 @@ function ContactForm({
         </div>
       </div>
       {/* 5 */}
-      <div className={`input-group sm:mb-[20px] mb-[12px] `}>
+      <div className={`input-group sm:mb-[16px] mb-[12px] `}>
         <input
           type="password"
           value={contactInput.pass}
@@ -93,7 +93,7 @@ function ContactForm({
         <label htmlFor="pass">Password</label>
       </div>
       {/* 6 */}
-      <div className={`input-group sm:mb-[20px] mb-[12px] `}>
+      <div className={`input-group`}>
         <input
           type="password"
           value={contactInput.confirmPass}
@@ -110,7 +110,7 @@ function ContactForm({
       </div>
 
       {/* address */}
-      {/* <div className={`input-group sm:mb-[20px] mb-[12px] `}>
+      {/* <div className={`input-group sm:mb-[16px] mb-[12px] `}>
         <input
           type="text"
           value={contactInput.address}
@@ -127,7 +127,7 @@ function ContactForm({
       </div> */}
 
       {/* <div className="flex gap-4">
-        <div className={`input-group sm:mb-[20px] mb-[12px] `}>
+        <div className={`input-group sm:mb-[16px] mb-[12px] `}>
           <input
             type="text"
             value={contactInput.city}
@@ -142,7 +142,7 @@ function ContactForm({
           />
           <label htmlFor="city">City</label>
         </div>
-        <div className={`input-group sm:mb-[20px] mb-[12px] `}>
+        <div className={`input-group sm:mb-[16px] mb-[12px] `}>
           <input
             type="text"
             name=""
@@ -160,7 +160,7 @@ function ContactForm({
       </div> */}
 
       {/* state */}
-      {/* <div className={`input-group sm:mb-[20px] mb-[12px] `}>
+      {/* <div className={`input-group sm:mb-[16px] mb-[12px] `}>
         <input
           type="text"
           value={contactInput.state}
@@ -265,7 +265,7 @@ function ContactForm({
         </Popover>
       </div> */}
 
-      {/* <div className={`input-group sm:mb-[20px] mb-[12px] `}>
+      {/* <div className={`input-group sm:mb-[16px] mb-[12px] `}>
         <input
           type="text"
           value={contactInput.country}

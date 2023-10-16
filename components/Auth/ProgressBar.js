@@ -16,7 +16,7 @@ const ProgressBar = ({ setProgress, progress }) => {
   }, [progress1, progress]);
 
   return (
-    <div className="progress-bar mt-10">
+    <div className="progress-bar mt-0">
       <div
         className="-mt-7 ml-[14px] absolute text-right"
         style={{ width: `${progress1}%` }}

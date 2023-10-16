@@ -13,6 +13,7 @@ import { RiCloseFill } from "react-icons/ri";
 import ChooseHeader from "./ChooseHeader";
 import CompanyDetails from "./SignUpForm/CompanyDetails";
 import ProgressBar from "./ProgressBar";
+import Link from "next/link";
 
 function SignUp() {
   const [progress, setProgress] = useState(0);
@@ -66,6 +67,31 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (active === 1) {
+      // Regular expression for email validation
+      const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
+      if (contactInput.email.match(emailRegex)) {
+        setError(null);
+      } else {
+        setError("Please enter valid email");
+        return;
+      }
+      // Regular expression for password validation
+      const passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+      if (contactInput.pass !== contactInput.confirmPass) {
+        setError("Passwords do not match");
+        return;
+      }
+
+      if (contactInput.pass.match(passRegex)) {
+        setError(null);
+      } else {
+        setError(
+          "Please enter valid password: Minimum 6 characters, at least one uppercase letter, one lowercase letter and one number"
+        );
+        return;
+      }
       nextStep();
       setProgress(50);
     }
@@ -273,13 +299,13 @@ function SignUp() {
   return (
     <>
       {goingNext ? (
-        <div className="pt-12 pb-5 w-full relative">
+        <div className="pt-8 pb-5 w-full relative">
           <div className="max-w-[620px] w-full flex flex-col items-center px-3 mx-auto">
             {/* stepper */}
             {active !== 4 && (
               <>
                 <ProgressBar setProgress={setProgress} progress={progress} />
-                <div className="py-4"></div>
+                <div className="py-2"></div>
               </>
             )}
 
@@ -298,7 +324,7 @@ function SignUp() {
             <div className=""></div>
             {active !== 4 && (
               <>
-                <h1 className="text-black text-[22px] sm:text-[24px] font-bold text-center mb-5 lg:mb-6">
+                <h1 className="text-black text-[22px] sm:text-[22px] font-bold text-center mb-4 lg:mb-[14px]">
                   SALON/SPA OWNERS ACCOUNT CREATION
                 </h1>
               </>
@@ -306,7 +332,7 @@ function SignUp() {
 
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col h-full w-full mb-12"
+              className="flex flex-col h-full w-full mb-6"
             >
               {active === 1 && (
                 <ContactForm
@@ -366,6 +392,7 @@ function SignUp() {
                   </p>
 
                   <Button
+                    onClick={() => router.push("https://misscire.com")}
                     title="SHOP BEST SELLERS"
                     className="!bg-primary !py-[6px]"
                   />
@@ -386,7 +413,7 @@ function SignUp() {
             </form>
 
             {active !== 4 && (
-              <div className="mb-4">
+              <div className="mb-[0px]">
                 <ChooseHeader />
               </div>
             )}

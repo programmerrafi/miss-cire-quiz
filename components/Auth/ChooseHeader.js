@@ -19,10 +19,10 @@ const OffersData = [
 function ChooseHeader() {
   return (
     <div>
-      <h1 className="text-[24px] font-bold text-center">
+      <h1 className="text-[22px] font-bold text-center">
         FREE SAMPLES DELIVERED TO YOUR DOOR
       </h1>
-      <p className="text-[14px] text-[#7a7979] text-center mb-4">
+      <p className="text-[14px] text-[#7a7979] text-center mb-3">
         Create your account at Miss Cire to get exclusive benefits.
       </p>
 

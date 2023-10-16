@@ -12,8 +12,8 @@ function Footer() {
       />
 
       <p className="text-white text-[12px] font-light">
-        @ {new Date().getFullYear()} Miss Cine Cosmetics: Corp: USA; Inc: All
-        rights reserved.
+        @ {new Date().getFullYear()} Miss Cire Cosmetics, Corp. All rights
+        reserved.
       </p>
       <p className="underline text-[12px] text-white font-medium">
         Terms & Services
