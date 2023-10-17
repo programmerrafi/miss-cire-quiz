@@ -105,8 +105,8 @@ function ChooseAccount({
           <p className="text-white text-[15px]">NEXT</p>
         </div>
 
-        <div className="flex items-center bg-[#E9E9E9] px-2 w-[75%] mx-auto gap-1 py-[1px]">
-          <AiFillWarning size={22} className="text-[#444444b5]" />
+        <div className="flex items-center border px-2 w-[75%] mx-auto gap-1 py-[3px]">
+          <AiFillWarning size={22} className="text-[#ffb804]" />
           <p className="text-[10.38px] leading-[13px] text-[#444444fd]">
             This program is exclusively available for beauty professionals with
             a valid esthetician/cosmetologist US license
