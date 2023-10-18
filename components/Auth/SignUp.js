@@ -16,6 +16,21 @@ import ProgressBar from "./ProgressBar";
 import Link from "next/link";
 import PicProducts from "./PicProducts";
 
+const OffersData = [
+  {
+    image: "/icons/offer-1.svg",
+    title: "Receive Free Samples \n ($60 Value)",
+  },
+  {
+    image: "/icons/offer-2.svg",
+    title: "20% OFF in your \n First Purchase",
+  },
+  {
+    image: "/icons/offer-3.svg",
+    title: "Lifetime Access to Pro \n Prices & Discounts",
+  },
+];
+
 function SignUp() {
   const [progress, setProgress] = useState(0);
   const [goingNext, setGoingNext] = useState(0);
@@ -78,7 +93,8 @@ function SignUp() {
         return;
       }
       // Regular expression for password validation
-      const passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+      // const passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+      const passRegex = /^(?=.*\d)(?=.*[a-z]).{6,}$/;
 
       if (contactInput.pass !== contactInput.confirmPass) {
         setError("Passwords do not match");
@@ -89,7 +105,7 @@ function SignUp() {
         setError(null);
       } else {
         setError(
-          "Please enter valid password: Minimum 6 characters, at least one uppercase letter, one lowercase letter and one number"
+          "Please enter valid password: Minimum 6 characters, one lowercase letter and one number"
         );
         return;
       }
@@ -310,16 +326,14 @@ function SignUp() {
 
       {/* stepper */}
       {active !== 4 && goingNext !== 0 && (
-        <div className="max-w-[580px] w-full px-3 mx-auto">
+        <div className="max-w-[580px] w-full pt-6 sm:pt-0 px-5 sm:px-3 mx-auto">
           <ProgressBar setProgress={setProgress} progress={progress} />
           <div className="py-1"></div>
         </div>
       )}
 
       {goingNext === 1 && (
-        <>
-          <PicProducts setGoingNext={setGoingNext} setProgress={setProgress} />
-        </>
+        <PicProducts setGoingNext={setGoingNext} setProgress={setProgress} />
       )}
 
       {goingNext === 2 && (
@@ -429,8 +443,31 @@ function SignUp() {
             </form>
 
             {active !== 4 && (
-              <div className="mb-[0px]">
-                <ChooseHeader />
+              <div className="mb-[0px] sm:block hidden">
+                <ChooseHeader active={active} />
+              </div>
+            )}
+
+            {active !== 4 && (
+              <div className="sm:hidden block w-full">
+                <div className="flex sm:flex-row flex-col justify-between gap-2 sm:px-0 w-full">
+                  {OffersData.map((item, index) => (
+                    <div
+                      className="w-full sm:w-[165px] bg-[#FAFAFA] sm:bg-white sm:border border-[#dfdfdfdd] flex flex-row sm:flex-col items-center sm:justify-center gap-2 sm:gap-0 py-2 px-4"
+                      key={index}
+                    >
+                      <Image
+                        src={item.image}
+                        width={20}
+                        height={20}
+                        alt="ico"
+                      />
+                      <p className="text-[12px] text-black font-light text-center leading-4 sm:mt-[8px]">
+                        {item.title}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
           </div>

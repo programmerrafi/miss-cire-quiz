@@ -42,13 +42,16 @@ function ChooseAccount({
   selectAccountType,
   setProgress,
 }) {
+  // get items from local storage
+  const items = JSON.parse(localStorage.getItem("items"));
+  console.log("items: ", items);
   return (
     <div className="max-w-[510px] w-full">
       <ChooseHeader />
 
       {/* choose account */}
-      <div className="py-8 px-6">
-        <h1 className="text-[18px] font-bold text-center">
+      <div className="py-6 sm:py-8 px-4 sm:px-6">
+        <h1 className="text-[15px] sm:text-[18px] font-bold text-center">
           CHOOSE YOUR CATEGORY
         </h1>
 
@@ -77,7 +80,7 @@ function ChooseAccount({
                   alt="ico"
                 />
                 <p
-                  className={`text-center text-[11px] sm:text-[15px] font-normal ${
+                  className={`text-center text-[12px] sm:text-[15px] font-normal ${
                     item.title === selectAccountType.title
                       ? "text-[#fff]"
                       : "text-black"
@@ -97,15 +100,20 @@ function ChooseAccount({
 
         <div
           onClick={() => {
-            setGoingNext(1);
-            setProgress(0);
+            if (items.length > 0) {
+              setGoingNext(2);
+              setProgress(25);
+            } else {
+              setGoingNext(1);
+              setProgress(0);
+            }
           }}
           className="flex items-center justify-center gap-2 w-full mx-auto !bg-primary !py-[10px] font-semibold cursor-pointer mb-4"
         >
           <p className="text-white text-[15px]">NEXT</p>
         </div>
 
-        <div className="flex items-center border px-2 w-[75%] mx-auto gap-1 py-[3px]">
+        <div className="flex items-center border px-2 w-[95%] sm:w-[75%] mx-auto gap-1 py-[3px]">
           <AiFillWarning size={22} className="text-[#ffb804]" />
           <p className="text-[10.38px] leading-[13px] text-[#444444fd]">
             This program is exclusively available for beauty professionals with

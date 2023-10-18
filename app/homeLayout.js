@@ -8,36 +8,17 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 function HomeLayout({ children }) {
-  // const [xAuthToken, setXAuthToken] = useState("hello");
-  const [xAuthToken, setXAuthToken] = useState(null);
-  // const user = useSelector(selectUser);
-  const user = null;
+  const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   (async () => {
-  //     const res = await getRequest(`${process.env.APP_API_URL}/stores/auth`);
-  //     if (res?.user) {
-  //       console.log("🚀 ~ file: index.js:29 ~ res:", res);
-  //       dispatch(updateUser(res));
-  //       localStorage.setItem("x_auth_token", res?.access_token);
-  //     }
-  //   })();
-  // }, []);
-
-  // useEffect(() => {
-  //   const x_auth_token = localStorage?.getItem("x_auth_token");
-  //   setXAuthToken(x_auth_token);
-  // }, []);
+  useEffect(() => {
+    dispatch(updateUser("user"));
+  }, []);
 
   return (
     <main className="min-h-screen h-full flex flex-col">
       <Header />
-      {user ? (
-        <>{children}</>
-      ) : (
-        (xAuthToken === null || xAuthToken === undefined) && <Auth />
-      )}
+      {user ? <>{children}</> : <Auth />}
       <Footer />
     </main>
   );

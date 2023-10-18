@@ -1,8 +1,8 @@
-import Image from "next/image";
-import React, { useState } from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Button from "../shared/Button";
-import { AiOutlineCheck } from "react-icons/ai";
-import ProductCard from "./ProductCard";
+import SingleProduct from "./SingleProduct";
 
 const samples = [
   {
@@ -63,7 +63,7 @@ const samples = [
   },
 ];
 
-function PicProducts({ setGoingNext, setProgress }) {
+function Products() {
   const [allSamples, setAllSamples] = useState(samples);
   const [addNewItems, setAddNewItems] = useState([]);
 
@@ -82,22 +82,30 @@ function PicProducts({ setGoingNext, setProgress }) {
       setAddNewItems(newItems);
     }
   };
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(addNewItems));
+  }, [addNewItems]);
 
   return (
-    <div className="flex flex-col justify-center max-w-[670px] w-full mx-auto">
-      <h1 className="text-[22px] font-bold text-center">
-        PICK TWO FREE SAMPLES
+    <div className="flex flex-col justify-center">
+      <h1 className="text-[18px] sm:text-[48px] mb-2 sm:mb-0 font-bold text-center">
+        PICK 2 FREE SAMPLES
       </h1>
-      <div className="hidden sm:block">
+      <div className="hidden sm:block mb-4">
         <Button
           title="JUST PAY FOR SHIPPING"
-          className="!py-[0px] !px-[10px] !bg-primary !text-[11.5px] !w-fit mx-auto cursor-default"
+          className="!py-[6px] !px-[10px] !bg-primary !text-[18px] !w-fit mx-auto cursor-default !font-bold"
         />
       </div>
+      <div className="block sm:hidden mb-2">
+        <div className="!py-[2.5px] text-white !px-[10px] !bg-primary !text-[8px] !w-fit mx-auto cursor-default !font-bold">
+          FREE OF COST
+        </div>
+      </div>
       <div className="hidden sm:block">
-        <div className="flex gap-8 justify-center mt-2 mb-5">
+        <div className="flex gap-14 justify-center flex-wrap lg:flex-nowrap mt-2 mb-14">
           {allSamples.slice(0, 3).map((sample, i) => (
-            <ProductCard
+            <SingleProduct
               sample={sample}
               key={i}
               addItem={addItem}
@@ -106,9 +114,9 @@ function PicProducts({ setGoingNext, setProgress }) {
           ))}
         </div>
 
-        <div className="flex gap-8 justify-center mt-2 mb-5">
+        <div className="flex gap-14 justify-center mt-2 mb-14 flex-wrap lg:flex-nowrap">
           {allSamples.slice(3, 7).map((sample, i) => (
-            <ProductCard
+            <SingleProduct
               sample={sample}
               key={i}
               addItem={addItem}
@@ -119,9 +127,9 @@ function PicProducts({ setGoingNext, setProgress }) {
       </div>
 
       <div className="block sm:hidden">
-        <div className="flex flex-wrap gap-10 mt-2 mb-5 justify-center">
+        <div className="flex flex-wrap gap-4 mt-2 mb-8 justify-center">
           {allSamples.map((sample, i) => (
-            <ProductCard
+            <SingleProduct
               sample={sample}
               key={i}
               addItem={addItem}
@@ -130,7 +138,7 @@ function PicProducts({ setGoingNext, setProgress }) {
           ))}
         </div>
       </div>
-      <Button
+      {/* <Button
         onClick={() => {
           if (addNewItems.length <= 1) return;
           setGoingNext(2);
@@ -141,9 +149,9 @@ function PicProducts({ setGoingNext, setProgress }) {
         } ${addNewItems?.length > 1 ? "SELECT & NEXT" : ""}`}
         type="submit"
         className="rounded-[3px] !py-[10px] !bg-primary !w-[55%] mx-auto mb-4 sm:mb-1"
-      />
+      /> */}
     </div>
   );
 }
 
-export default PicProducts;
+export default Products;

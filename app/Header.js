@@ -45,21 +45,21 @@ function Header() {
   return (
     <>
       <header>
-        <div className="py-4 bg-black w-full flex justify-center px-6 items-center relative">
+        <div className="py-4 sm:py-3 bg-black w-full flex justify-center px-6 items-center relative">
           <Image
             src="https://www.misscire.com/cdn/shop/files/Miss-Cire-Logo-White_x35@2x.png?v=1613174703"
             width={0}
             height={0}
             alt="miss-cire"
             sizes="100vw"
-            className="w-[124px] h-[20px] md:w-[197px] md:h-[32px]"
+            className="w-[124px] h-[20px] md:w-[190px] md:h-[30px]"
           />
 
           <div className="flex items-center gap-1 absolute left-3 sm:left-10 top-1/2 -translate-y-1/2">
             <FiPhone
-              className={`text-white text-[11px] sm:text-[15px] md:text-[20px]`}
+              className={`text-white text-[11px] sm:text-[15px] md:text-[18px]`}
             />
-            <p className="text-white text-[8px] sm:text-[11px] md:text-[16px] font-normal">
+            <p className="text-white text-[8px] sm:text-[11px] md:text-[15px] font-normal">
               +1 (305) 302-2129
             </p>
           </div>
