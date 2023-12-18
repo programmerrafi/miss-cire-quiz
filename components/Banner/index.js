@@ -6,7 +6,7 @@ function Banner() {
     <div>
       <div className="hidden sm:block">
         <Image
-          src="/banner/banner-1.jpg"
+          src="/banner/banner-d.png"
           width={0}
           height={0}
           sizes="100vw"
@@ -16,7 +16,7 @@ function Banner() {
       </div>
       <div className="block sm:hidden">
         <Image
-          src="/banner/banner-2.jpg"
+          src="/banner/banner-mm.png"
           width={0}
           height={0}
           alt="banner"
