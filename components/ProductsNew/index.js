@@ -1,6 +1,8 @@
 "use client";
 
+import { updateUser } from "@/redux/slices/authSlice";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import Button from "../shared/Button";
 import SingleProduct from "./SingleProduct";
 
@@ -66,6 +68,7 @@ const samples = [
 function ProductsNew() {
   const [allSamples, setAllSamples] = useState(samples);
   const [addNewItems, setAddNewItems] = useState([]);
+  const dispatch = useDispatch();
 
   const addItem = (item) => {
     // find the index of the item
@@ -88,15 +91,10 @@ function ProductsNew() {
 
   return (
     <div className="flex flex-col justify-center">
-      <h1 className="text-[18px] sm:text-[48px] mb-2 sm:mb-0 font-bold text-center">
-        PICK 2 FREE SAMPLES
+      <h1 className="text-[18px] sm:text-[48px] mb-6 sm:mb-0 font-bold text-center">
+        MEET YOUR NEW FAVIES
       </h1>
-      <div className="hidden sm:block mb-4">
-        <Button
-          title="JUST PAY FOR SHIPPING"
-          className="!py-[6px] !px-[10px] !bg-primary !text-[18px] !w-fit mx-auto cursor-default !font-bold"
-        />
-      </div>
+
       <div className="block sm:hidden mb-2">
         <div className="!py-[2.5px] text-white !px-[10px] !bg-primary !text-[8px] !w-fit mx-auto cursor-default !font-bold">
           FREE OF COST
@@ -150,6 +148,13 @@ function ProductsNew() {
         type="submit"
         className="rounded-[3px] !py-[10px] !bg-primary !w-[55%] mx-auto mb-4 sm:mb-1"
       /> */}
+      <div className="hidden sm:block mb-6">
+        <Button
+          onClick={() => dispatch(updateUser(null))}
+          title="JUST PAY FOR SHIPPING"
+          className="!py-[6px] !px-[10px] !bg-primary !text-[18px] !w-fit mx-auto cursor-default !font-bold"
+        />
+      </div>
     </div>
   );
 }

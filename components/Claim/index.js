@@ -36,14 +36,14 @@ function Claim() {
         />
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-full">
+      {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-full">
         <Button
           onClick={handleSamples}
           title="CLAIM YOUR FREE SAMPLES"
           // className="mx-auto !max-w-[320px] sm:!max-w-[400px] w-full !bg-primary mb-8 sm:mb-14"
           className="mx-auto !max-w-[320px] sm:!max-w-[400px] w-full !text-[15px]"
         />
-      </div>
+      </div> */}
     </div>
   );
 }

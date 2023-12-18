@@ -25,7 +25,7 @@ function SingleProduct({ sample, addItem, addNewItems }) {
       <p className="text-[16.61] sm:text-[24px] text-black font-bold text-center leading-4 mt-[20px] mb-[14px]">
         {sample.title}
       </p>
-      <div className="hidden sm:block">
+      {/* <div className="hidden sm:block">
         <div className="flex flex-col justify-between gap-1">
           {sample.subTitle.map((item, index) => (
             <div className="flex items-center py-1 px-4 gap-[3px]" key={index}>
@@ -36,8 +36,8 @@ function SingleProduct({ sample, addItem, addNewItems }) {
             </div>
           ))}
         </div>
-      </div>
-      <div className="block sm:hidden">
+      </div> */}
+      {/* <div className="block sm:hidden">
         <div className="flex flex-col justify-between gap-1">
           {sample.subTitle2.map((item, index) => (
             <div className="flex items-center px-4 gap-[3px]" key={index}>
@@ -48,11 +48,11 @@ function SingleProduct({ sample, addItem, addNewItems }) {
             </div>
           ))}
         </div>
-      </div>
-      <p className="text-[12.46px] sm:text-[18px] text-black font-medium text-center leading-4 my-[10px] sm:my-[20px]">
+      </div> */}
+      {/* <p className="text-[12.46px] sm:text-[18px] text-black font-medium text-center leading-4 my-[10px] sm:my-[20px]">
         ${sample.price}.00
-      </p>
-      <div
+      </p> */}
+      {/* <div
         onClick={() => addItem(sample)}
         className={` border text-[12.46px] sm:text-[18px] font-medium sm:font-bold cursor-pointer border-primary py-1 px-4 text-center w-full uppercase ${
           checkItemExists(sample.id)
@@ -61,7 +61,7 @@ function SingleProduct({ sample, addItem, addNewItems }) {
         }`}
       >
         {checkItemExists(sample.id) ? "Selected" : "Select"}
-      </div>
+      </div> */}
     </div>
   );
 }
