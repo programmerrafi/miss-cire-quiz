@@ -20,11 +20,11 @@ function HowWorks() {
         <Player videoUrl="/videos/wax-m.mp4" />
       </div>
 
-      <div className="hidden sm:block my-6">
+      <div className="my-6">
         <Button
           onClick={() => dispatch(updateUser(null))}
           title="CLAIM YOUR FREE SAMPLES"
-          className="!py-[6px] !px-[10px] !bg-primary !text-[18px] !w-fit mx-auto cursor-default !font-bold"
+          className="!py-[6px] !px-[10px] !bg-primary !text-[16px] sm:!text-[18px] !w-fit mx-auto cursor-default !font-bold"
         />
       </div>
     </div>

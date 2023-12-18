@@ -20,9 +20,9 @@ function SingleProduct({ sample, addItem, addNewItems }) {
         height={0}
         alt="ico"
         sizes="100vw"
-        className="sm:w-[240px] sm:h-[240px] w-[166px] h-[166px] object-contain"
+        className="lg:w-[240px] lg:h-[240px] sm:w-[190px] sm:h-[190px] w-[116px] h-[116px] object-contain"
       />
-      <p className="text-[16.61] sm:text-[24px] text-black font-bold text-center leading-4 mt-[20px] mb-[14px]">
+      <p className="text-[14.61px] sm:text-[20px] lg:text-[24px] text-black font-bold text-center leading-4 mt-[20px] mb-[14px]">
         {sample.title}
       </p>
       {/* <div className="hidden sm:block">

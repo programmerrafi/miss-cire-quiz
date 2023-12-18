@@ -15,14 +15,14 @@ const samples = [
     subTitle2: ["Film Hard Wax", "Hypoallergenic", "Vegan"],
     price: 25.0,
   },
-  // {
-  //   id: 2,
-  //   image: "/newProducts/2.png",
-  //   title: "BLUE MY MIND",
-  //   subTitle: ["Film Hard Wax", "Vegan"],
-  //   subTitle2: ["Film Hard Wax", "Hypoallergenic", "Vegan"],
-  //   price: 25.0,
-  // },
+  {
+    id: 2,
+    image: "/newProducts/blue.png",
+    title: "BLUE MY MIND",
+    subTitle: ["Film Hard Wax", "Vegan"],
+    subTitle2: ["Film Hard Wax", "Hypoallergenic", "Vegan"],
+    price: 25.0,
+  },
   {
     id: 3,
     image: "/newProducts/HelloGorgeous.png",
@@ -91,17 +91,17 @@ function ProductsNew() {
 
   return (
     <div className="flex flex-col justify-center">
-      <h1 className="text-[18px] sm:text-[48px] mb-6 sm:mb-0 font-bold text-center">
-        MEET YOUR NEW FAVIES
+      <h1 className="text-[18px] sm:text-[48px] mb-6 sm:mb-6 font-bold text-center">
+        MEET YOUR NEW FAVES
       </h1>
 
-      <div className="block sm:hidden mb-2">
+      {/* <div className="block sm:hidden mb-2">
         <div className="!py-[2.5px] text-white !px-[10px] !bg-primary !text-[8px] !w-fit mx-auto cursor-default !font-bold">
           FREE OF COST
         </div>
-      </div>
+      </div> */}
       <div className="hidden sm:block">
-        <div className="flex gap-14 justify-center flex-wrap lg:flex-nowrap mt-2 mb-14">
+        <div className="flex gap-12 lg:gap-14 justify-center flex-wrap lg:flex-nowrap mt-2 mb-14">
           {allSamples.slice(0, 3).map((sample, i) => (
             <SingleProduct
               sample={sample}
@@ -112,7 +112,7 @@ function ProductsNew() {
           ))}
         </div>
 
-        <div className="flex gap-14 justify-center mt-2 mb-14 flex-wrap lg:flex-nowrap">
+        <div className="flex gap-12 lg:gap-14 justify-center mt-2 mb-14 flex-wrap lg:flex-nowrap">
           {allSamples.slice(3, 7).map((sample, i) => (
             <SingleProduct
               sample={sample}
@@ -148,11 +148,11 @@ function ProductsNew() {
         type="submit"
         className="rounded-[3px] !py-[10px] !bg-primary !w-[55%] mx-auto mb-4 sm:mb-1"
       /> */}
-      <div className="hidden sm:block mb-6">
+      <div className="mb-6">
         <Button
           onClick={() => dispatch(updateUser(null))}
           title="JUST PAY FOR SHIPPING"
-          className="!py-[6px] !px-[10px] !bg-primary !text-[18px] !w-fit mx-auto cursor-default !font-bold"
+          className="!py-[6px] !px-[10px] !bg-primary !text-[16px] sm:!text-[18px] !w-fit mx-auto cursor-default !font-bold"
         />
       </div>
     </div>
