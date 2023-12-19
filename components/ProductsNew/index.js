@@ -24,14 +24,6 @@ const samples = [
     price: 25.0,
   },
   {
-    id: 3,
-    image: "/newProducts/HelloGorgeous.png",
-    title: "HELLO GORGEOUS",
-    subTitle: ["Film Hard Wax", "Vegan"],
-    subTitle2: ["Film Hard Wax", "Hypoallergenic", "Vegan"],
-    price: 25.0,
-  },
-  {
     id: 4,
     image: "/newProducts/HairyDaysSoOver.png",
     title: "HAIRY DAYS",
@@ -47,6 +39,15 @@ const samples = [
     subTitle2: ["Film Hard Wax", "Hypoallergenic", "Vegan"],
     price: 25.0,
   },
+  {
+    id: 3,
+    image: "/newProducts/HelloGorgeous.png",
+    title: "HELLO GORGEOUS",
+    subTitle: ["Film Hard Wax", "Vegan"],
+    subTitle2: ["Film Hard Wax", "Hypoallergenic", "Vegan"],
+    price: 25.0,
+  },
+
   {
     id: 6,
     image: "/newProducts/Luxe.png",
@@ -100,9 +101,9 @@ function ProductsNew() {
           FREE OF COST
         </div>
       </div> */}
-      <div className="hidden sm:block">
+      <div className="hidden md:block">
         <div className="flex gap-12 lg:gap-14 justify-center flex-wrap lg:flex-nowrap mt-2 mb-14">
-          {allSamples.slice(0, 3).map((sample, i) => (
+          {allSamples.slice(0, 4).map((sample, i) => (
             <SingleProduct
               sample={sample}
               key={i}
@@ -113,7 +114,7 @@ function ProductsNew() {
         </div>
 
         <div className="flex gap-12 lg:gap-14 justify-center mt-2 mb-14 flex-wrap lg:flex-nowrap">
-          {allSamples.slice(3, 7).map((sample, i) => (
+          {allSamples.slice(4, 7).map((sample, i) => (
             <SingleProduct
               sample={sample}
               key={i}
@@ -124,8 +125,8 @@ function ProductsNew() {
         </div>
       </div>
 
-      <div className="block sm:hidden">
-        <div className="flex flex-wrap gap-4 mt-2 mb-8 justify-center">
+      <div className="block md:hidden">
+        <div className="flex flex-wrap gap-4 sm:gap-8 mt-2 mb-8 justify-center">
           {allSamples.map((sample, i) => (
             <SingleProduct
               sample={sample}
@@ -151,7 +152,7 @@ function ProductsNew() {
       <div className="mb-6">
         <Button
           onClick={() => dispatch(updateUser(null))}
-          title="JUST PAY FOR SHIPPING"
+          title="CLAIM YOUR FREE SAMPLES"
           className="!py-[6px] !px-[10px] !bg-primary !text-[16px] sm:!text-[18px] !w-fit mx-auto cursor-default !font-bold"
         />
       </div>
