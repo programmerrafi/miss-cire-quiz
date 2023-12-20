@@ -19,7 +19,7 @@ function ProductCard({ sample, addItem, addNewItems }) {
         {sample.title}
       </p>
       <div className="hidden sm:block">
-        <div className="flex flex-col justify-between gap-1">
+        <div className="flex flex-col justify-between gap-1 mb-1">
           {sample.subTitle.map((item, index) => (
             <div className="flex items-center px-4 gap-[3px]" key={index}>
               <AiOutlineCheck size="10px" className="text-primary" />
@@ -31,7 +31,7 @@ function ProductCard({ sample, addItem, addNewItems }) {
         </div>
       </div>
       <div className="block sm:hidden">
-        <div className="flex flex-col justify-between gap-1">
+        <div className="flex flex-col justify-between gap-1 mb-1">
           {sample.subTitle2.map((item, index) => (
             <div className="flex items-center px-4 gap-[3px]" key={index}>
               <AiOutlineCheck size="10px" className="text-primary" />
@@ -42,9 +42,9 @@ function ProductCard({ sample, addItem, addNewItems }) {
           ))}
         </div>
       </div>
-      <p className="text-[12px] text-black font-medium text-center leading-4 my-[4px]">
+      {/* <p className="text-[12px] text-black font-medium text-center leading-4 my-[4px]">
         ${sample.price}.00
-      </p>
+      </p> */}
       <div
         onClick={() => addItem(sample)}
         className={` border text-[9.26px] font-bold cursor-pointer border-primary py-1 px-4 text-center w-full uppercase ${
